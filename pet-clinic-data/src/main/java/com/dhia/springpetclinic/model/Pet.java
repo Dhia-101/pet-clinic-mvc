@@ -2,16 +2,16 @@ package com.dhia.springpetclinic.model;
 
 import java.time.LocalDate;
 
-public class Pet {
-    private petType type;
+public class Pet extends BaseEntity {
+    private PetType type;
     private Owner owner;
     private LocalDate birthdate;
 
-    public petType getType() {
+    public PetType getType() {
         return type;
     }
 
-    public void setType(petType type) {
+    public void setType(PetType type) {
         this.type = type;
     }
 
