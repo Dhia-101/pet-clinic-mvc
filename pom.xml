@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.dhia</groupId>
     <artifactId>spring-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>spring-pet-clinic</name>
     <description>pet clinic app</description>
     <properties>
@@ -47,6 +47,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/DhiaTr/spring-pet-clinic.git</developerConnection>
-      <tag>spring-pet-clinic-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
