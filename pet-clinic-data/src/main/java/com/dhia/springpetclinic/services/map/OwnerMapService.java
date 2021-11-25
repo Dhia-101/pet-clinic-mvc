@@ -2,10 +2,11 @@ package com.dhia.springpetclinic.services.map;
 
 import com.dhia.springpetclinic.model.Owner;
 import com.dhia.springpetclinic.services.CrudService;
+import com.dhia.springpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerMapService extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
