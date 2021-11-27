@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class BaseEntity implements Serializable {
 
-    public long getId() {
+    private Long id;
+
+    public Long getId() {
         return id;
     }
 
@@ -12,6 +14,5 @@ public class BaseEntity implements Serializable {
         this.id = id;
     }
 
-    private long id;
 
 }

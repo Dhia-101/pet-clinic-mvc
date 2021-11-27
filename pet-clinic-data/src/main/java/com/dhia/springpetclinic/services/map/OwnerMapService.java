@@ -30,7 +30,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner save(Long id, Owner owner) {
-        return super.save(id, owner);
+    public Owner save(Owner owner) {
+        return super.save(owner);
     }
 }
