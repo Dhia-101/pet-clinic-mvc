@@ -6,5 +6,22 @@
 </head>
 <body>
     <h1 th:text="'Owner Index'">Owner Index</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="owner : ${owners}">
+                <th th:text="${owner?.id}">owner id</th>
+                <th th:text="${owner?.firstName}">first Name</th>
+                <th th:text="${owner?.lastName}">Buck</th>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
