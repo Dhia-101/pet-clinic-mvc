@@ -1,11 +1,9 @@
 package com.dhia.springpetclinic.bootstrap;
 
-import com.dhia.springpetclinic.model.Owner;
-import com.dhia.springpetclinic.model.Pet;
-import com.dhia.springpetclinic.model.PetType;
-import com.dhia.springpetclinic.model.Vet;
+import com.dhia.springpetclinic.model.*;
 import com.dhia.springpetclinic.services.OwnerService;
 import com.dhia.springpetclinic.services.PetTypeService;
+import com.dhia.springpetclinic.services.SpecialtiesService;
 import com.dhia.springpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,20 +16,31 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialtiesService specialtiesService;
 
     public DataLoader(
             OwnerService ownerService,
             VetService vetService,
-            PetTypeService petTypeService
+            PetTypeService petTypeService,
+            SpecialtiesService specialtiesService
     ) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialtiesService = specialtiesService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+        // check if data already loaded
+        // optimise code logic
+        if(vetService.findAll().size() == 0) {
+            LoadData();
+        }
 
+    }
+
+    private void LoadData() {
         PetType dog = petTypeService.save(new PetType("dog"));
         PetType cat = petTypeService.save(new PetType("cat"));
 
@@ -65,9 +74,7 @@ public class DataLoader implements CommandLineRunner {
 
         owner2.getPets().add(pet2);
 
-
         ownerService.save(owner2);
-
 
         Owner owner3 = new Owner();
         owner3.setFirstName("firstNameThree");
@@ -77,15 +84,26 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Owners...");
 
+        // specialties
+        Specialty radiologie = specialtiesService.save(new Specialty("radiologie"));
+
+
+        Specialty dentist = specialtiesService.save(new Specialty("dentist"));
+
+        // vets
         Vet vet1 = new Vet();
         vet1.setFirstName("vetFirstNameOne");
         vet1.setLastName("vetLastNameOne");
+
+        vet1.getSpecialties().add(radiologie);
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("vetFirstNameTwo");
         vet2.setLastName("vetLastNameTwo");
+
+        vet2.getSpecialties().add(dentist);
 
         vetService.save(vet2);
 
