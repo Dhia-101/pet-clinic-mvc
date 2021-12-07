@@ -45,11 +45,17 @@ public class DataLoader implements CommandLineRunner {
         PetType cat = petTypeService.save(new PetType("cat"));
 
         Owner owner1 = new Owner();
-        owner1.setFirstName("firstNameOne");
-        owner1.setLastName("lastNameOne");
+        owner1.setFirstName("firstNe");
+        owner1.setLastName("lastN");
         owner1.setAddress("address 1");
         owner1.setCity("city 1");
         owner1.setTelephone("12345678");
+
+        ownerService.save(owner1);
+
+        // one of these inserts has error
+        // TODO: test which one
+        /*
 
         Pet pet1 = new Pet();
         pet1.setType(dog);
@@ -60,8 +66,8 @@ public class DataLoader implements CommandLineRunner {
         owner1.getPets().add(pet1);
 
         Owner owner2 = new Owner();
-        owner2.setFirstName("firstNameTwo");
-        owner2.setLastName("lastNameTwo");
+        owner2.setFirstName("first");
+        owner2.setLastName("last");
         owner2.setAddress("address 2");
         owner2.setCity("city 2");
         owner2.setTelephone("87654321");
@@ -106,13 +112,10 @@ public class DataLoader implements CommandLineRunner {
         vet2.getSpecialties().add(dentist);
 
         vetService.save(vet2);
-
-        // visits
-        Visit visitOne = new Visit();
-        visitOne.setDate(LocalDate.now());
-        visitOne.setPet(pet1);
-        visitOne.setDescription("description visit One");
-
         System.out.println("Loaded Vets...");
+*/
+
+
+
     }
 }
