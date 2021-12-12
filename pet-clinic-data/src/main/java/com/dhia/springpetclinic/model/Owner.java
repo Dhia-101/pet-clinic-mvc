@@ -1,11 +1,8 @@
 package com.dhia.springpetclinic.model;
-
 import lombok.*;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
 
 @Getter
 @Setter
@@ -17,7 +14,6 @@ import java.util.Set;
 public class Owner extends Person {
 
     // TODO: adjust super constructor for builder func
-
     @Column(name = "address")
     private String address;
 
