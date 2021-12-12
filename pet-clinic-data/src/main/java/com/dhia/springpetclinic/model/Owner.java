@@ -13,6 +13,10 @@ import java.util.Set;
 @Table(name = "owners")
 public class Owner extends Person {
 
+    public Owner(Long Id) {
+        setId(Id);
+    }
+
     // TODO: adjust super constructor for builder func
     @Column(name = "address")
     private String address;
