@@ -51,11 +51,11 @@ public class DataLoader implements CommandLineRunner {
         owner1.setCity("city 1");
         owner1.setTelephone("12345678");
 
-        ownerService.save(owner1);
+
 
         // one of these inserts has error
         // TODO: test which one
-        /*
+
 
         Pet pet1 = new Pet();
         pet1.setType(dog);
@@ -64,6 +64,7 @@ public class DataLoader implements CommandLineRunner {
         pet1.setBirthdate(LocalDate.now());
 
         owner1.getPets().add(pet1);
+        ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("first");
@@ -78,7 +79,7 @@ public class DataLoader implements CommandLineRunner {
         pet2.setOwner(owner2);
         pet2.setBirthdate(LocalDate.now());
 
-        owner2.getPets().add(pet2);
+        // owner2.getPets().add(pet2);
 
         ownerService.save(owner2);
 
@@ -89,7 +90,7 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner3);
 
         System.out.println("Loaded Owners...");
-
+/*
         // specialties
         Specialty radiologie = specialtiesService.save(new Specialty("radiologie"));
 
