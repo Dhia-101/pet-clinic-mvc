@@ -1,5 +1,6 @@
 package com.dhia.springpetclinic.controllers;
 
+import com.dhia.springpetclinic.model.Owner;
 import com.dhia.springpetclinic.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +22,13 @@ public class OwnerController {
     @RequestMapping({"", "/", "/index"})
     public String index(Model model) {
         model.addAttribute("owners", ownerService.findAll());
+        return "owners/index";
+    }
 
-        return "notImplemented";
+    @RequestMapping("/find")
+    public String findOwners(Model model) {
+        model.addAttribute("owner", new Owner());
+        return "owners/findOwners";
     }
 
     @GetMapping("/{ownerId}")
