@@ -5,5 +5,5 @@ import com.dhia.springpetclinic.model.Owner;
 import java.util.List;
 
 public interface OwnerService extends CrudService<Owner, Long> {
-    List<Owner> findByLastNameLike(String lastName);
+    List<Owner> findAllByLastNameLike(String lastName);
 }
